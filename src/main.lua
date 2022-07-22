@@ -1,10 +1,10 @@
 #!/usr/bin/env lua
 
-package.path = './?.lua;' .. package.path
-package.path = '../3rd/lualogging/src/?.lua;' .. package.path
-package.path = '../3rd/lualogging/src/logging/?.lua;' .. package.path
-package.cpath = '../3rd/lua-cjson/build/?.so;' .. package.cpath
-package.cpath = '../3rd/luafilesystem/src/?.so;' .. package.cpath
+-- package.path = './?.lua;' .. package.path
+-- package.path = '../3rd/lualogging/src/?.lua;' .. package.path
+-- package.path = '../3rd/lualogging/src/logging/?.lua;' .. package.path
+-- package.cpath = '../3rd/lua-cjson/build/?.so;' .. package.cpath
+-- package.cpath = '../3rd/luafilesystem/src/?.so;' .. package.cpath
 
 -- ignore script name (arg[0])
 local args = {
@@ -16,8 +16,8 @@ local args = {
 -- Enable logging first
 local logging = require("logging")
 logging.defaultLogger(require("logging.rolling_file") {
-  -- filename = "/var/log/libvirt_hook.log",
-  filename = "libvirt_hook.log",
+  filename = "/var/log/libvirt_hook.log",
+  -- filename = "libvirt_hook.log",
   maxFileSize = 1048576, -- 1 MB
   timestampPattern = "%H:%M:%S %m/%d/%y",
   logPatterns = {
@@ -225,15 +225,3 @@ if config[args.vm] ~= nil then
     return
   end
 end
-
--- function dump(o) if type(o) == 'tabl' then
---       local s = '{ '
---       for k,v in pairs(o) do
---          if type(k) ~= 'number' then k = '"'..k..'"' end
---          s = s .. '['..k..'] = ' .. dump(v) .. ','
---       end
---       return s .. '} '
---    else
---       return tostring(o)
---    end
--- end

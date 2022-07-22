@@ -1,5 +1,3 @@
-default: qemu
-
 qemu:
 	lua luastatic.lua \
 		main.lua \
