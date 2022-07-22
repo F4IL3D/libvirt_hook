@@ -1,0 +1,15 @@
+[submodule "ext/lua"]
+	path = ext/lua
+	url = https://github.com/lua/lua.git
+[submodule "ext/luafilesystem"]
+	path = ext/luafilesystem
+	url = https://github.com/keplerproject/luafilesystem.git
+[submodule "ext/lua-cjson"]
+	path = ext/lua-cjson
+	url = https://github.com/openresty/lua-cjson.git
+[submodule "ext/lualogging"]
+	path = ext/lualogging
+	url = https://github.com/lunarmodules/lualogging.git
+[submodule "ext/luastatic"]
+	path = ext/luastatic
+	url = https://github.com/ers35/luastatic.git

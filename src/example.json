@@ -1,0 +1,20 @@
+{
+  "loglevel": "debug",
+  "Win10": {
+    "vfio": [
+      {
+        "id": "04:00.0",
+        "force": false
+      },
+      {
+        "id": "05:00.0",
+        "force": true
+      }
+    ],
+    "hugepages": {
+      "unit": "gb",
+      "size": 16
+    },
+    "cpugov": true
+  }
+}
