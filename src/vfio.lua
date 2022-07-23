@@ -15,7 +15,7 @@ local function id(vpath, dpath)
     device, err = io.open(dpath)
     if not device then return nil, err end
   end
-  local id = vendor:read() .. ":" .. device:read()
+  local id = string.gsub(vendor:read(), "0x", "") .. ":" .. string.gsub(device:read(), "0x", "")
   vendor:close()
   device:close()
   return id
