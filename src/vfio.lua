@@ -100,14 +100,14 @@ function vfio.new(device)
     if force then
       setId()
     end
-    driver_unbind()
     driver_override()
+    driver_unbind()
     drivers_probe()
   end
 
   function self.unbind()
-    driver_unbind()
     driver_override(true)
+    driver_unbind()
     drivers_probe()
   end
   return self
