@@ -11,10 +11,8 @@ setmetatable(cpu, {
 
 function cpu.new()
   local self = setmetatable({}, cpu)
-  -- local path = "/sys/devices/system/cpu/#/cpufreq/scaling_governor"
-  -- local cpus = fs.search("/sys/devices/system/cpu", "cpu%d+")
-  local path = "/tmp/sys/devices/system/cpu/#/cpufreq/scaling_governor"
-  local cpus = fs.search("/tmp/sys/devices/system/cpu/", "cpu%d+")
+  local path = "/sys/devices/system/cpu/#/cpufreq/scaling_governor"
+  local cpus = fs.search("/sys/devices/system/cpu", "cpu%d+")
   local files = {}
 
   for _, cpu in pairs(cpus) do

@@ -24,12 +24,9 @@ end
 function vfio.new(device)
   local self = setmetatable({}, vfio)
   self.device = nil
-  -- local probe = "/sys/bus/pci/drivers_probe"
-  -- local new_id = "/sys/bus/pci/drivers/vfio-pci/new_id"
-  -- local sysfs = "/sys/bus/pci/devices/0000:" .. device
-  local probe = "/tmp/sys/bus/pci/drivers_probe"
-  local new_id = "/tmp/sys/bus/pci/drivers/vfio-pci/new_id"
-  local sysfs = "/tmp/sys/bus/pci/devices/0000:" .. device
+  local probe = "/sys/bus/pci/drivers_probe"
+  local new_id = "/sys/bus/pci/drivers/vfio-pci/new_id"
+  local sysfs = "/sys/bus/pci/devices/0000:" .. device
   local unbind = nil
   local override = nil
   local vendorId = nil

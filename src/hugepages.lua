@@ -28,12 +28,10 @@ function hpages.new(pages, unite)
   local self = setmetatable({}, hpages)
   local unite = unite or "KB"
   local path = {
-    -- ["KB"] = "/sys/devices/system/node/#/hugepages/hugepages-2048kB/nr_hugepages",
-    ["KB"] = "/tmp/sys/devices/system/node/#/hugepages/hugepages-2048kB/nr_hugepages",
-    -- ["GB"] = "/sys/devices/system/node/#/hugepages/hugepages-1048576kB/nr_hugepages",
-    ["GB"] = "/tmp/sys/devices/system/node/#/hugepages/hugepages-1048576kB/nr_hugepages",
+    ["KB"] = "/sys/devices/system/node/#/hugepages/hugepages-2048kB/nr_hugepages",
+    ["GB"] = "/sys/devices/system/node/#/hugepages/hugepages-1048576kB/nr_hugepages",
   }
-  local nodes = fs.search("/tmp/sys/devices/system/node/", "node%d+")
+  local nodes = fs.search("/sys/devices/system/node/", "node%d+")
   local size = pages / #nodes
   local files = {}
 
