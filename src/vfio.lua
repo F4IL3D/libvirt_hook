@@ -37,7 +37,7 @@ function vfio.new(device)
   elseif not fs.exist(sysfs) then
     return nil, "Device path did not exist in sysfs: " .. sysfs
   else
-    self.device = device
+    self.device = "0000:" .. device
     unbind = sysfs .. "/driver/unbind"
     override = sysfs .. "/driver_override"
     vendorId = sysfs .. "/vendor"
