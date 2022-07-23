@@ -76,7 +76,7 @@ function vfio.new(device)
       else
         local file, err = io.open(override, "a")
         if not file then return nil, err end
-        file:write("vfio_pci")
+        file:write("vfio-pci")
         file:close()
       end
     else
