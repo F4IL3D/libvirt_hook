@@ -1,1 +1,3 @@
 qemu
+pkg/
+*.zst
