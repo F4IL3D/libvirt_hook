@@ -216,7 +216,7 @@ if config[args.vm] ~= nil then
   log:info("Found config for VM: " .. args.vm)
   local op = switch[args.operation]
   if op then
-    log:info("Apply config for operation: " ..args.operation)
+    log:info("Apply config for operation: " .. args.operation)
     for k, v in pairs(config[args.vm]) do
       op(k, v)
       log:info("[" .. k .. "] Config applied.")
